@@ -4,6 +4,7 @@ var correctAnswer = 0;
 var result = document.getElementById("result");
 var guesses = 0;
 var guess = 0;
+var tracker = document.getElementById("previousGuesses");
 
 //show initial vale of slider on page
 updateMax();
@@ -30,19 +31,23 @@ function updateMax(){
 function start(){
 	guesses = 0;
 	window.correctAnswer = randInt(1,maxNum);
+	tracker.innerHTML = "";
 }
 
 function guessSubmit(){
 	guesses+=1; //increment gueses by 1
 	guess = parseInt(document.getElementById("guess").value);
 	if (guess === correctAnswer){
-		result.innerHTML= "Well done, you got the answer in " + guesses + " guess(es)!"
+		result.innerHTML= "Well done, you got the answer in " + guesses + " guess(es)!";
+		guesses-=1;
 	}
 	else if(guess > correctAnswer){
 		result.innerHTML = "too high!!!";
+		tracker.innerHTML += guess + " too high<br>";
 	}
 	else{
 		result.innerHTML = "too low :(";
+		tracker.innerHTML += guess + " too low<br>";
 	}
 }
 
