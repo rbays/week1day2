@@ -3,15 +3,15 @@
 <head>
 </head>
 <body>
-	<div id = "capital">
-		£<input type = "number" id = "pounds" placeholder = "Loan amount" style = "width:100px" min = 0><b>.</b>
-		<input type = "number" max = 99 min = 0 placeholder="pence" id = "pence"
-	</div><br>
-	<div id = "aprDiv">
-		<input type = "number" id = "aprInt" min = 0 placeholder = "percentage" style = "width:100px"><b>.</b>
-		<input type = "number" id = "aprDec" min = 0 style = "width:50px">%		
-	</div>
 	
+	<div class= "Symbols">£</div>
+	<input type = "number" id = "pounds" placeholder = "Loan amount" min = 0>
+		<br>
+	<input type = "number" id = "apr" min = 0 placeholder = "Percentage APR" minimum = 0>	<div class = "Symbols">%</div> 
+	<div class= "Symbols">Length of loan</div><input type = "range" min = 0 max = 60 id="lengthMonth"><div id = "lengthWords">Please select length on slider up to 5 years</div>
+		<br>	
+	<button type = "button" id = "button1">Calculate</button>
+		<br>	
 	<div id = "result">initial</div>
 
 	
